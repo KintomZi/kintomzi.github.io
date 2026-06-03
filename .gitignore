@@ -1,0 +1,8 @@
+# .gitignore — 指定 Git 忽略的文件和目录，Jekyll 构建产物不纳入版本控制。
+#
+_site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+vendor
+.idea/
