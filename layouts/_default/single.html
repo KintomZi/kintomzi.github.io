@@ -1,0 +1,30 @@
+{{ define "main" }}
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">{{ .Title }}</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05-07:00" }}" itemprop="datePublished">
+        {{ .Date.Format "Jan 2, 2006" }}
+      </time>
+      {{- with .Params.author }}
+        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ . }}</span></span>
+      {{- end }}
+      {{- with .Params.categories }}
+        • {{ $notePrefix := cond (eq $.Lang "zh") "笔记/" "Notes/" }}
+        {{- $catsLen := len . }}
+        {{- range $i, $cat := . }}
+          {{- $catDisplay := index $.Site.Data.cat_names $cat $.Lang | default $cat }}
+          <span class="post-category">{{ $notePrefix }}{{ $catDisplay }}</span>
+          {{- if ne (add $i 1) $catsLen }}, {{ end }}
+        {{- end }}
+      {{- end }}
+    </p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    {{ .Content }}
+  </div>
+
+  <a class="u-url" href="{{ .Permalink }}" hidden></a>
+</article>
+{{ end }}

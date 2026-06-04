@@ -1,0 +1,33 @@
+{{ define "main" }}
+<div class="home">
+  {{- $heading := .Title }}
+  {{- if eq .Type "categories" }}
+    {{- $heading = cond (eq $.Lang "zh") "笔记" "Notes" }}
+  {{- end }}
+  <h1 class="page-heading">{{ $heading }}</h1>
+
+  {{ .Content }}
+
+  <div class="categories-page">
+    {{- range .Data.Terms.Alphabetical }}
+      {{- $catName := .Term }}
+      {{- $catDisplay := index $.Site.Data.cat_names $catName $.Lang | default $catName }}
+      <div class="category-section" id="{{ $catName | urlize }}">
+        <h2 class="category-heading">{{ $catDisplay }} <small>({{ .Count }})</small></h2>
+        <ul class="post-list">
+          {{- range .Pages }}
+          <li>
+            <span class="post-meta">{{ .Date.Format "Jan 2, 2006" }}</span>
+            <h3>
+              <a class="post-link" href="{{ .Permalink }}">{{ .Title }}</a>
+            </h3>
+          </li>
+          {{- end }}
+        </ul>
+      </div>
+    {{- else }}
+      <p>{{ cond (eq $.Lang "zh") "暂无版块分类。" "No categories yet." }}</p>
+    {{- end }}
+  </div>
+</div>
+{{ end }}

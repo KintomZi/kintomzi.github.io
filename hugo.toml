@@ -1,0 +1,27 @@
+baseURL = 'https://kintomzi.github.io/'
+languageCode = 'en-us'
+title = 'KintomZi.github.io'
+
+defaultContentLanguage = 'en'
+defaultContentLanguageInSubdir = true
+enableGitInfo = false
+
+
+[params]
+  github_username = 'KintomZi'
+  interests = ['Surveying&Mapping', 'LiDAR', 'Deep Learning']
+
+[taxonomies]
+  category = 'categories'
+
+[languages.en]
+  languageName = 'EN'
+  contentDir = 'content/en'
+  weight = 1
+
+[languages.zh]
+  languageName = '中'
+  contentDir = 'content/zh'
+  weight = 2
+
+

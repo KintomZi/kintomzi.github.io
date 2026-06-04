@@ -1,0 +1,35 @@
+{{ define "main" }}
+<div class="home">
+  {{- if .Title }}
+    <h1 class="page-heading">{{ .Title }}</h1>
+  {{- end }}
+
+  {{ .Content }}
+
+  {{- if .Pages }}
+    <ul class="post-list">
+      {{- range .Pages }}
+      <li>
+        <span class="post-meta">{{ .Date.Format "Jan 2, 2006" }}</span>
+        <h3>
+          <a class="post-link" href="{{ .Permalink }}">{{ .Title }}</a>
+        </h3>
+        {{- with .Params.categories }}
+          {{- $notePrefix := cond (eq $.Lang "zh") "笔记/" "Notes/" }}
+          {{- $catsLen := len . }}
+          <span class="post-categories">
+            {{- range $i, $cat := . }}
+              {{- $catDisplay := index $.Site.Data.cat_names $cat $.Lang | default $cat }}
+              <span class="post-category">{{ $notePrefix }}{{ $catDisplay }}</span>
+              {{- if ne (add $i 1) $catsLen }}, {{ end }}
+            {{- end }}
+          </span>
+        {{- end }}
+      </li>
+      {{- end }}
+    </ul>
+  {{- else }}
+    <p>{{ cond (eq $.Lang "zh") "暂无内容。" "No content yet." }}</p>
+  {{- end }}
+</div>
+{{ end }}
