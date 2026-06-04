@@ -7,4 +7,4 @@ url: /en/misc/2026/06/03/hello-world/
 
 This is my first post.
 
-Built this homepage with [Jekyll](https://jekyllrb.com/), and I'll be sharing content here.
+Built this homepage with [hugo](https://gohugo.io/), and I'll be sharing content here.
