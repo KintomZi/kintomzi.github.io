@@ -33,7 +33,7 @@
     </div>
   </section>
 
-  {{- $posts := where .Site.RegularPages "Section" "posts" }}
+  {{- $posts := where (where .Site.RegularPages "Section" "posts") "Lang" .Lang }}
   {{- if $posts }}
     <h2 class="post-list-heading">
       {{- if eq .Lang "zh" -}}近期{{- else -}}News{{- end -}}
