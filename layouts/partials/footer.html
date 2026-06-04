@@ -1,22 +1,36 @@
 <footer class="site-footer h-card">
   <data class="u-url" href="{{ .Permalink }}"></data>
-  <div class="wrapper">
-    <p class="site-description" style="display:flex;justify-content:space-between;align-items:center;">
-      <span id="busuanzi_container_site_uv" style="display:inline;">
-        {{- if eq .Lang "zh" }}
-        訪客數 <span id="busuanzi_value_site_uv"></span>
-        {{- else }}
-        Visitors <span id="busuanzi_value_site_uv"></span>
-        {{- end }}
-      </span>
-      <span>
+  <div class="wrapper footer-grid">
+    <div class="footer-left">
+      <p class="site-description">&copy; {{ now.Format "2006" }} {{ .Site.Params.github_username }}</p>
+      <p class="site-description">Posts: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> &middot; Code: <a href="https://opensource.org/licenses/MIT">MIT</a></p>
+      <p class="site-description">Built with <a href="https://gohugo.io">Hugo</a> &middot; Hosted on <a href="https://pages.github.com">GitHub Pages</a></p>
+    </div>
+    <div class="footer-right">
+      <p class="site-description">
         {{- if eq .Lang "zh" }}
         記錄學習的點滴，歡迎交流與指正(^_^)
         {{- else }}
         Capturing moments of learning, open to discussion and feedback :)
         {{- end }}
-      </span>
-    </p>
+      </p>
+      <p class="site-description">
+        <span id="busuanzi_container_site_uv" style="display:inline;">
+          {{- if eq .Lang "zh" }}
+          访客数 <span id="busuanzi_value_site_uv"></span>
+          {{- else }}
+          Visitors <span id="busuanzi_value_site_uv"></span>
+          {{- end }}
+        </span>
+      </p>
+      <p class="site-description">
+        {{- if eq .Lang "zh" }}
+        最后更新：{{ now.Format "2006-01" }}
+        {{- else }}
+        Last updated: {{ now.Format "2006-01" }}
+        {{- end }}
+      </p>
+    </div>
   </div>
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 </footer>

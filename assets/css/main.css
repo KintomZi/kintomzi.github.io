@@ -72,8 +72,14 @@ img{max-width:100%}
 .intro-link:hover{color:#2a7ae2}
 .intro-link-icon{width:16px;height:16px}
 
-.site-footer{padding:0.8rem 0;border-top:1px solid #e8e8e8}
-.site-description{margin:0;font-size:1rem;color:#888}
+.site-footer{padding:0.5rem 0;border-top:1px solid #e8e8e8}
+.footer-grid{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.4rem}
+.footer-left{flex:1;min-width:0}
+.footer-right{text-align:right;flex-shrink:0}
+@media screen and (max-width:800px){.footer-right{display:none}}
+.site-description{margin:0;font-size:0.82rem;line-height:1.4;color:#888}
+.site-description a{color:#888;text-decoration:underline}
+.site-description a:hover{color:#2a7ae2}
 
 .category-heading{font-size:1.3rem;font-weight:600}
 
