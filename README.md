@@ -75,7 +75,7 @@
 2. 文章 front matter 中使用 `categories: ["new-slug"]`
 
 ---
-## 3.首次部署
+## 3.首次部署/First deployment
 
 ### 3.1 Fork 仓库
 
@@ -127,7 +127,7 @@ hugo server
 
 ---
 
-## 4.内容更新
+## 4.内容更新/Content update
 
 ### 4.1 网页代码更新
 

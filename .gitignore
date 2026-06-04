@@ -1,4 +1,8 @@
+# Hugo 生成的静态站点文件，每次构建自动生成，无需版本管理
 public/
+# Hugo 资源缓存（图片处理等），构建时自动生成
 resources/
+# Hugo 构建锁文件，防止并发构建冲突，每次构建自动创建
 .hugo_build.lock
+# JetBrains IDE（IntelliJ、GoLand 等）的项目配置文件，用户本地设置无需入库
 .idea/
