@@ -15,10 +15,16 @@ body{display:flex;flex-direction:column;min-height:100vh;margin:0;padding:0;font
 .site-nav .page-link:first-child{margin-left:0}
 .site-nav .page-link:hover{color:#2a7ae2;text-decoration:underline}
 .site-nav .lang-link{font-weight:600}
-@media screen and (max-width:600px){
-  .site-header .wrapper{flex-direction:column;align-items:flex-start}
-  .site-nav{padding-top:0;width:100%}
-  .site-nav .page-link{margin-left:0;display:block;padding:0.25rem 0}
+@media screen and (max-width:800px){
+  .site-header .wrapper{flex-wrap:nowrap}
+  .site-nav{position:relative}
+  .site-nav .menu-icon{display:block;float:right;width:36px;height:26px;line-height:0;padding-top:10px;text-align:center;cursor:pointer}
+  .site-nav .menu-icon>svg{fill:#424242}
+  .site-nav .nav-trigger:checked~label>.menu-icon>svg{fill:#2a7ae2}
+  .site-nav .trigger{clear:both;display:none;position:absolute;top:100%;right:0;background:#fdfdfd;border:1px solid #e8e8e8;border-radius:4px;padding:0.5rem 0;min-width:140px;box-shadow:0 2px 8px rgba(0,0,0,0.1);z-index:10}
+  .site-nav .nav-trigger:checked~.trigger{display:block}
+  .site-nav .page-link{display:block;padding:0.5rem 1.2rem;margin-left:0}
+  .site-nav .page-link:hover{background:#f0f0f0;text-decoration:none}
 }
 
 .page-content{padding:1.5rem 0;flex:1}
