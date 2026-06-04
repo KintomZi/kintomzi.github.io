@@ -5,6 +5,6 @@ categories: ["misc"]
 url: /en/misc/2026/06/03/hello-world/
 ---
 
-This is my first post.
+This is the first article on my personal homepage.
 
 Built this homepage with [hugo](https://gohugo.io/), and I'll be sharing content here.

@@ -5,6 +5,6 @@ categories: ["misc"]
 url: /zh/misc/2026/06/03/hello-world/
 ---
 
-这是我的第一篇文章。
+这是我的个人主页的第一篇文章。
 
 用 [hugo](https://gohugo.io/) 搭建了这个个人主页，后续会在这里分享学习内容。
