@@ -4,65 +4,51 @@
 
 ## 项目结构
 
-### 构建与配置
-
-| 文件 | 作用 |
-|------|------|
-| `hugo.toml` | 站点全局配置：标题、URL、多语言设置、分类 taxonomy |
-| `.github/workflows/hugo.yml` | GitHub Actions 自动构建部署 |
-| `.gitignore` | 排除 `public/`、`resources/`、`.hugo_build.lock`、`.idea/` |
-
-### 页面内容
-
-| 路径 | URL | 说明 |
-|------|-----|------|
-| `content/en/_index.md` | `/en/` | 英文首页 |
-| `content/zh/_index.md` | `/zh/` | 中文首页 |
-| `content/en/projects/_index.md` | `/en/projects/` | 项目页面 |
-| `content/zh/projects/_index.md` | `/zh/projects/` | 项目页面 |
-
-### 布局模板 `layouts/`
-
-| 文件 | 说明 |
-|------|------|
-| `_default/baseof.html` | 全局基础框架 |
-| `_default/single.html` | 文章详情页 |
-| `_default/list.html` | 列表页（posts、projects 等 section） |
-| `_default/terms.html` | 分类汇总页（按 category 分组的笔记列表） |
-| `_default/term.html` | 单个分类下的文章列表 |
-| `index.html` | 首页布局（自我介绍卡片 + 文章列表 + 出版物） |
-| `404.html` | 自定义 404 页面（中英双语） |
-
-### 组件 `layouts/partials/`
-
-| 文件 | 说明 |
-|------|------|
-| `header.html` | 导航栏：主页、项目、笔记、语言切换 |
-| `head.html` | HTML head：meta、CSS、hreflang |
-| `footer.html` | 页脚 |
-
-### 数据 `data/`
-
-| 文件 | 说明 |
-|------|------|
-| `cat_names.yml` | 分类英文 slug → 中英文显示名的映射表 |
-
-### 静态资源 `assets/css/`
-
-| 文件 | 说明 |
-|------|------|
-| `main.css` | 全局样式（Hugo 构建时自动 minify + fingerprint） |
-
-### 文章 `content/<lang>/posts/`
-
-每篇文章是 Hugo page bundle（独立目录含 `index.md`），中英文各自独立：
-
-| 目录 | 标题 | 分类 |
-|------|------|------|
-| `hello-world/` | Hello World | misc |
-| `jekyll-homepage-setup/` | Jekyll 博客搭建指南 / Setup Guide | tech |
-| `markdown-cheatsheet/` | Markdown 常用语法速查 / Quick Reference | tech |
-| `pointnet/` | PointNet 论文 | paper |
+```
+.
+├── hugo.toml                          # 站点全局配置：标题、URL、多语言设置、分类 taxonomy
+├── .github/
+│   └── workflows/
+│       └── hugo.yml                   # GitHub Actions 自动构建部署
+├── .gitignore                         # 排除 public/、resources/、.hugo_build.lock、.idea/
+├── content/
+│   ├── en/
+│   │   ├── _index.md                  # 英文首页 → /en/
+│   │   ├── projects/
+│   │   │   └── _index.md              # 项目页面 → /en/projects/
+│   │   └── posts/
+│   │       ├── hello-world/           # Hello World (misc)
+│   │       ├── jekyll-homepage-setup/ # Jekyll 博客搭建指南 (tech)
+│   │       ├── markdown-cheatsheet/   # Markdown 常用语法速查 (tech)
+│   │       └── pointnet/              # PointNet 论文 (paper)
+│   └── zh/
+│       ├── _index.md                  # 中文首页 → /zh/
+│       ├── projects/
+│       │   └── _index.md              # 项目页面 → /zh/projects/
+│       └── posts/
+│           ├── hello-world/           # Hello World (misc)
+│           ├── jekyll-homepage-setup/ # Jekyll 博客搭建指南 (tech)
+│           ├── markdown-cheatsheet/   # Markdown 常用语法速查 (tech)
+│           └── pointnet/              # PointNet 论文 (paper)
+├── layouts/
+│   ├── _default/
+│   │   ├── baseof.html               # 全局基础框架
+│   │   ├── single.html               # 文章详情页
+│   │   ├── list.html                 # 列表页（posts、projects 等 section）
+│   │   ├── terms.html                # 分类汇总页（按 category 分组的笔记列表）
+│   │   └── term.html                 # 单个分类下的文章列表
+│   ├── index.html                    # 首页布局（自我介绍卡片 + 文章列表 + 出版物）
+│   ├── 404.html                      # 自定义 404 页面（中英双语）
+│   └── partials/
+│       ├── header.html               # 导航栏：主页、项目、笔记、语言切换
+│       ├── head.html                 # HTML head：meta、CSS、hreflang
+│       └── footer.html               # 页脚
+├── data/
+│   └── cat_names.yml                 # 分类英文 slug → 中英文显示名的映射表
+└── assets/
+    └── css/
+        └── main.css                  # 全局样式（Hugo 构建时自动 minify + fingerprint）
+```
 
 ## 架构说明
 
