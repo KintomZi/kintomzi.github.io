@@ -59,7 +59,7 @@ pip install open3d
 
 Flash Attention 用于加速 Transformer 中注意力机制计算（可选，不装也能跑，但建议安装）。
 
-官方仓库：https://github.com/Dao-AILab/flash-attention
+官方仓库: https://github.com/Dao-AILab/flash-attention
 
 基于环境配置选用 flash attention v2.5.8。
 
