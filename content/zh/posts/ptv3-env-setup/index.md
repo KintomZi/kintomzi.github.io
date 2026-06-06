@@ -4,7 +4,11 @@ date: 2026-06-06T20:00:00+08:00
 categories: ["tech"]
 ---
 
-环境配置（AutoDL）：RTX 4090 · PyTorch 2.0.0 · Python 3.8 (Ubuntu 20.04) · CUDA 11.8
+环境配置（AutoDL）：
+  - RTX 4090
+  - PyTorch 2.0.0 · 
+  - Python 3.8 (Ubuntu 20.04) 
+  - CUDA 11.8
 
 ## 一、基础环境安装
 
