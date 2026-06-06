@@ -1,5 +1,5 @@
 ---
-title: "PointTransformer V3 环境搭建记录"
+title: "PointTransformer v3 环境搭建记录"
 date: 2026-06-06T20:00:00+08:00
 categories: ["tech"]
 ---
