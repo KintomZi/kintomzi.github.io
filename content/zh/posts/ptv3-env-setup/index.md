@@ -18,6 +18,7 @@ conda install ninja -y
 
 ```bash
 # conda install pytorch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0 pytorch-cuda=11.8 -c pytorch -c nvidia
+
 pip install torch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0 --index-url https://download.pytorch.org/whl/cu118
 ```
 
@@ -26,6 +27,7 @@ pip install torch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0 --index-url https
 ```bash
 # conda install h5py pyyaml -c anaconda -y
 # conda install sharedarray tensorboard tensorboardx yapf addict einops scipy plyfile termcolor timm -c conda-forge -y
+
 pip install h5py pyyaml scipy einops tensorboard tensorboardx \
 plyfile termcolor timm addict yapf sharedarray
 ```
@@ -35,6 +37,7 @@ plyfile termcolor timm addict yapf sharedarray
 ```bash
 # conda install pytorch-cluster pytorch-scatter pytorch-sparse -c pyg -y
 # pip install torch-geometric
+
 pip install pyg-lib torch-scatter torch-sparse torch-cluster torch-geometric \
 -f https://data.pyg.org/whl/torch-2.1.0+cu118.html
 ```
@@ -73,7 +76,9 @@ pip install flash-attn==2.5.8 --no-build-isolation
 
 ```bash
 wget https://github.com/Dao-AILab/flash-attention/releases/download/v2.5.8/flash_attn-2.5.8+cu118torch2.1cxx11abiFALSE-cp38-cp38-linux_x86_64.whl
+#本地下载，也可直接输入链接进行浏览器下载
 
+# 下载后安装
 pip install flash_attn-2.5.8+cu118torch2.1cxx11abiFALSE-cp38-cp38-linux_x86_64.whl
 ```
 
@@ -84,11 +89,13 @@ pip install wandb
 pip install peft
 ```
 
-**关闭 wandb**（实验管理与可视化），避免反复登录，但仍然可以使用本地 tensorboard 可视化：
+## Tips
+- **关闭 wandb**（实验管理与可视化），避免反复登录，但仍然可以使用本地 tensorboard 可视化：
 
-将 `Pointcept/configs/_base_/default_runtime.py` 第 24 行的 `enable_wandb = True` 改为 `False`。
+    将 `./Pointcept/configs/_base_/default_runtime.py` 第 24 行的 `enable_wandb = True` 改为 `False`。
 
-## 四、可能出现的问题
+
+## 可能出现的问题
 
 ### ImportError: cannot import name 'packaging' from 'pkg_resources'
 
