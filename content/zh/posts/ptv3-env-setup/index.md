@@ -62,6 +62,7 @@ pip install spconv-cu118     # 选择与本地 CUDA 版本匹配的
 pip install open3d
 ```
 
+---
 ## 二、安装 Flash Attention
 
 Flash Attention 用于加速 Transformer 中注意力机制计算（可选，不装也能跑，但建议安装）。
@@ -86,6 +87,7 @@ wget https://github.com/Dao-AILab/flash-attention/releases/download/v2.5.8/flash
 pip install flash_attn-2.5.8+cu118torch2.1cxx11abiFALSE-cp38-cp38-linux_x86_64.whl
 ```
 
+---
 ## 三、补充安装
 
 ```bash
@@ -93,12 +95,14 @@ pip install wandb
 pip install peft
 ```
 
+---
 ## Tips
 - **关闭 wandb**（实验管理与可视化），避免反复登录，但仍然可以使用本地 tensorboard 可视化：
 
     将 `./Pointcept/configs/_base_/default_runtime.py` 第 24 行的 `enable_wandb = True` 改为 `False`。
 
 
+---
 ## 可能出现的问题
 
 ### ImportError: cannot import name 'packaging' from 'pkg_resources'
