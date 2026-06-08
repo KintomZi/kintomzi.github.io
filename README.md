@@ -18,19 +18,21 @@
 │   │   ├── projects/
 │   │   │   └── _index.md              # 项目页面 → /en/projects/
 │   │   └── posts/
-│   │       ├── hello-world/           # Hello World (misc)
-│   │       ├── jekyll-homepage-setup/ # Jekyll 博客搭建指南 (tech)
-│   │       ├── markdown-cheatsheet/   # Markdown 常用语法速查 (tech)
-│   │       └── pointnet/              # PointNet 论文 (paper)
+│   │       ├── post_name_0/           # 文章名称（英文简写）
+│   │       │   └── index.md           # 文章内容
+│   │        ...
+│   │       └──post_name_i/           # 文章名称（英文简写）
+│   │             └── index.md           # 文章内容
 │   └── zh/
 │       ├── _index.md                  # 中文首页 → /zh/
 │       ├── projects/
 │       │   └── _index.md              # 项目页面 → /zh/projects/
 │       └── posts/
-│           ├── hello-world/           # Hello World (misc)
-│           ├── jekyll-homepage-setup/ # Jekyll 博客搭建指南 (tech)
-│           ├── markdown-cheatsheet/   # Markdown 常用语法速查 (tech)
-│           └── pointnet/              # PointNet 论文 (paper)
+│           ├── post_name_0/           # 文章名称（英文简写）
+│           │   └── index.md           # 文章内容
+│            ...
+│           └──post_name_i/           # 文章名称（英文简写）
+│                 └── index.md           # 文章内容
 ├── layouts/
 │   ├── _default/
 │   │   ├── baseof.html               # 全局基础框架
