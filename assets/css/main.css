@@ -57,8 +57,7 @@ pre{padding:8px 12px;overflow-x:auto}
 pre code{border:0;padding:0;background-color:transparent}
 
 blockquote{color:#828282;border-left:4px solid #e8e8e8;padding-left:1rem;font-style:italic}
-mark{background:#fff3a8;color:#111;padding:0.08em 0.2em;border-radius:2px}
-img{max-width:100%}
+mark{background:#fff3b0;color:inherit;padding:0.1em 0.3em;border-radius:3px}
 
 .intro-section{margin-bottom:30px}
 .intro-card{display:flex;gap:20px;padding:24px;background:#f8f9fa;border-radius:8px;border-left:4px solid #2a7ae2;align-items:flex-start}

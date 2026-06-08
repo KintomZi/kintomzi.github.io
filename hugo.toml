@@ -14,13 +14,6 @@ enableGitInfo = false
 [taxonomies]
   category = 'categories'
 
-[markup]
-  [markup.goldmark]
-    [markup.goldmark.extensions]
-      [markup.goldmark.extensions.extras]
-        [markup.goldmark.extensions.extras.highlight]
-          enable = true
-
 [languages.en]
   languageName = 'EN'
   contentDir = 'content/en'
