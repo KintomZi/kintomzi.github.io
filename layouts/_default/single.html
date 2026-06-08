@@ -18,11 +18,11 @@
           {{- if ne (add $i 1) $catsLen }}, {{ end }}
         {{- end }}
       {{- end }}
-      • <span id="busuanzi_container_page_pv" style="display:inline;">
+      • <span id="busuanzi_container_page_uv" style="display:inline;">
           {{- if eq .Lang "zh" }}
-          阅读量 <span id="busuanzi_value_page_pv"></span>
+          阅读量 <span id="busuanzi_value_page_uv"></span>
           {{- else }}
-          Views <span id="busuanzi_value_page_pv"></span>
+          Views <span id="busuanzi_value_page_uv"></span>
           {{- end }}
         </span>
     </p>
