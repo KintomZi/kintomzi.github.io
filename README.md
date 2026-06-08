@@ -21,8 +21,8 @@
 │   │       ├── post_name_0/           # 文章名称（英文简写）
 │   │       │   └── index.md           # 文章内容
 │   │        ...
-│   │       └──post_name_i/           # 文章名称（英文简写）
-│   │             └── index.md           # 文章内容
+│   │       └── post_name_i/           # 文章名称（英文简写）
+│   │           └── index.md           # 文章内容
 │   └── zh/
 │       ├── _index.md                  # 中文首页 → /zh/
 │       ├── projects/
@@ -31,8 +31,8 @@
 │           ├── post_name_0/           # 文章名称（英文简写）
 │           │   └── index.md           # 文章内容
 │            ...
-│           └──post_name_i/           # 文章名称（英文简写）
-│                 └── index.md           # 文章内容
+│           └── post_name_i/           # 文章名称（英文简写）
+│               └── index.md           # 文章内容
 ├── layouts/
 │   ├── _default/
 │   │   ├── baseof.html               # 全局基础框架
