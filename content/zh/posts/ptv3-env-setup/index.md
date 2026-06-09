@@ -137,6 +137,6 @@ pip install -U pip setuptools wheel packaging
 解决方法：重新编译
 
 ```bash
-cd ~/Code/pointcept/libs/pointrope
+cd ./Pointcept/libs/pointrope
 pip install -e .
 ```
