@@ -4,6 +4,8 @@ date: 2026-06-10T21:30:00+08:00
 categories: ["tech"]
 ---
 
+> 环境搭建见：[PointTransformer V3 环境搭建记录](../ptv3-env-setup)
+
 ## 参考库
 
 - 官方：https://github.com/Pointcept/Pointcept
