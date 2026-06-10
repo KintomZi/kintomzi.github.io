@@ -144,7 +144,7 @@ model = dict(
 ### 优化器与学习率
 
 ```python
-epoch = 3000
+epoch = 300
 optimizer = dict(type="AdamW", lr=0.006, weight_decay=0.05)
 scheduler = dict(
     type="OneCycleLR",
@@ -207,9 +207,11 @@ aug_transform=[
 
 需要添加或调整 4 个文件/目录：
 
-| 文件 | 用途 |
-|------|------|
-| `pointcept/datasets/preprocessing/DatasetName/preprocess_name.py` | 数据预处理 |
-| `pointcept/datasets/DatasetName.py` | 模型数据加载逻辑 |
-| `pointcept/datasets/__init__.py` | 数据集导入声明 |
-| `configs/DatasetName/model_param.py` | 模型参数配置 |
+| 文件                                                                            | 用途 |
+|-------------------------------------------------------------------------------|------|
+| `./Pointcept/pointcept/datasets/preprocessing/DatasetName/preprocess_name.py` | 数据预处理 |
+| `./Pointcept/pointcept/datasets/DatasetName.py`                                         | 模型数据加载逻辑 |
+| `./Pointcept/pointcept/datasets/__init__.py`                                            | 数据集导入声明 |
+| `./Pointcept/configs/DatasetName/model_param.py`                                        | 模型参数配置 |
+
+通过数据预处理后的文件会将属性分开，例如`coords`、`semantic`、...
