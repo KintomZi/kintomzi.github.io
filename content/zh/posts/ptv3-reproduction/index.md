@@ -42,7 +42,7 @@ categories: ["tech"]
 数据集导入两种方式：
 
 - 将数据集放到 `./Pointcept/data/` 下
-- 在配置文件中修改 `data_root`
+- 在`./Pointcept/configs/Dataset_name/xxx.py`文件中修改 `data_root`
 
 训练（成功运行会产生 `./Pointcept/exp`）：
 
@@ -214,4 +214,6 @@ aug_transform=[
 | `./Pointcept/pointcept/datasets/__init__.py`                                            | 数据集导入声明 |
 | `./Pointcept/configs/DatasetName/model_param.py`                                        | 模型参数配置 |
 
-通过数据预处理后的文件会将属性分开，例如`coords`、`semantic`、...
+通过`preprocess_name.py`处理后的文件会将属性分开，例如`coords`、`semantic`、`intensity`...
+
+`DatasetName.py`用来加载标签（e.g. 控制标签范围），属性操作等逻辑
