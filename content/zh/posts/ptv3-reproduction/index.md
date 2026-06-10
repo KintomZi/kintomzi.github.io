@@ -1,6 +1,6 @@
 ---
 title: "PointTransformer V3 复现记录"
-date: 2026-06-07T00:00:00+08:00
+date: 2026-06-10T21:30:00+08:00
 categories: ["tech"]
 ---
 
