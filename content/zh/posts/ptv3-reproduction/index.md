@@ -187,7 +187,9 @@ train.transform 数据增强链：`CenterShift` → `RandomDropout` → `RandomR
 test.test_cfg 测试增强：`GridSample` + 多组 `aug_transform`（多尺度 + flip 组合），每组独立测试后合并投票。
 
 ### aug_transform
+同一个场景，做多种不同的几何扰动（缩放、旋转、翻转），分别输入模型得到多份预测，最后投票/平均取 argmax
 
+==虽然这样的精度更加准确，但代价是推理时间 ×N 和内存 ×N，推理时完全可以用 aug_transform 中只保留最原始那一条（不做任何变换）==
 ```python
 aug_transform=[
     [dict(type="RandomScale", scale=[0.9, 0.9])],
