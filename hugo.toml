@@ -9,7 +9,7 @@ enableGitInfo = false
 
 [params]
   github_username = 'KintomZi'
-  interests = ['Surveying&Mapping', 'LiDAR', 'Deep Learning']
+  interests = ['Remote Sensing', 'LiDAR', 'Deep Learning']
 
 [taxonomies]
   category = 'categories'
