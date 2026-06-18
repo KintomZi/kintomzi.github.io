@@ -1,6 +1,6 @@
 # Kintom's Homepage
 
-基于 Hugo 的个人主页，部署于 GitHub Pages (`kintomzi.github.io`)。
+基于 Hugo 的个人主页，部署于 GitHub Pages (`kintomzi.github.io`)[[Link](kintomzi.github.io)]。
 
 ---
 ## 1.项目结构/Project structure
