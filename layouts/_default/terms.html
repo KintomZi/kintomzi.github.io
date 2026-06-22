@@ -9,17 +9,33 @@
   {{ .Content }}
 
   <div class="categories-page">
-    {{- range .Data.Terms.Alphabetical }}
-      {{- $catName := .Term }}
-      {{- $catDisplay := index $.Site.Data.cat_names $catName $.Lang | default $catName }}
-      <div class="category-section" id="{{ $catName | urlize }}">
-        <h2 class="category-heading">{{ $catDisplay }} <small>({{ .Count }})</small></h2>
+    {{- $allPosts := where (where .Site.AllPages "Section" "posts") "Kind" "page" }}
+    {{- $catMap := dict }}
+    {{- range $allPosts }}
+      {{- $page := . }}
+      {{- range .Params.categories }}
+        {{- $cat := . }}
+        {{- $list := index $catMap $cat | default (slice) }}
+        {{- $catMap = merge $catMap (dict $cat ($list | append $page)) }}
+      {{- end }}
+    {{- end }}
+
+    {{- $catList := slice }}
+    {{- range $cat, $posts := $catMap }}
+      {{- $merged := partial "merge_posts.html" (dict "posts" $posts "lang" $.Lang) }}
+      {{- $catList = $catList | append (dict "name" $cat "count" (len $merged) "pages" $merged) }}
+    {{- end }}
+
+    {{- range sort $catList "name" "asc" }}
+      {{- $catName := index $.Site.Data.cat_names .name $.Lang | default .name }}
+      <div class="category-section" id="{{ .name | urlize }}">
+        <h2 class="category-heading">{{ $catName }} <small>({{ .count }})</small></h2>
         <ul class="post-list">
-          {{- range .Pages }}
+          {{- range .pages }}
           <li>
             <span class="post-meta">{{ .Date.Format "Jan 2, 2006" }}</span>
             <h3>
-              <a class="post-link" href="{{ .Permalink }}">{{ .Title }}</a>
+              <a class="post-link" href="{{ .Permalink }}">{{ partial "post_title.html" (dict "page" . "lang" $.Lang) }}</a>
             </h3>
           </li>
           {{- end }}

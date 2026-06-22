@@ -1,0 +1,12 @@
+{{- /*
+  post_title.html — 返回按当前语言匹配的标题
+  若当前语言 ≠ 文章语言 且文章有 _title，则返回 _title；否则返回 title
+  Usage: partial "post_title.html" (dict "page" . "lang" $.Lang)
+*/ -}}
+{{- $page := .page -}}
+{{- $lang := .lang -}}
+{{- if and (ne $page.Lang $lang) (isset $page.Params "_title") -}}
+  {{ $page.Params._title }}
+{{- else -}}
+  {{ $page.Title }}
+{{- end -}}

@@ -1,5 +1,6 @@
 ---
 title: "Jekyll 个人主页搭建指南"
+_title: "Jekyll Homepage Setup Record"
 date: 2026-06-03T20:30:00+08:00
 categories: ["tech"]
 url: /zh/tech/2026/06/03/jekyll-blog-setup/

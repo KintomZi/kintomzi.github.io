@@ -1,5 +1,6 @@
 ---
 title: "Ubuntu 22.04 创建桌面快捷方式(.desktop)"
+_title: "Ubuntu 22.04 Create Desktop Shortcuts (.desktop)"
 date: 2025-07-31T13:21:53+08:00
 categories: ["tech"]
 ---

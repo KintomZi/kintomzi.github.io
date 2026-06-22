@@ -1,5 +1,6 @@
 ---
 title: "Hello World"
+_title: "Hello World"
 date: 2026-06-03T20:00:00+08:00
 categories: ["misc"]
 url: /en/misc/2026/06/03/hello-world/

@@ -1,5 +1,6 @@
 ---
 title: "MinkowskiEngine0.5.3安装记录(Linux/Ubuntu)"
+_title: "MinkowskiEngine 0.5.3 Setup Record (Linux/Ubuntu)"
 date: 2025-07-21T00:00:00+08:00
 categories: ["tech"]
 url: 

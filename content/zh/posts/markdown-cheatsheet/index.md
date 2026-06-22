@@ -1,5 +1,6 @@
 ---
 title: "Markdown 常用语法速查"
+_title: "Markdown Quick Reference"
 date: 2026-06-03T21:30:00+08:00
 categories: ["tech"]
 url: /zh/notes/2026/06/03/markdown-cheatsheet/

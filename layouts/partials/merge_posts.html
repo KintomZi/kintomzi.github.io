@@ -1,0 +1,22 @@
+{{- /*
+  merge_posts.html — 跨语言合并 posts，按 TranslationKey 去重。
+  当前语言优先，不存在时 fallback 到已有版本。
+  Usage: partial "merge_posts.html" (dict "posts" $posts "lang" .Lang)
+*/ -}}
+{{- $posts := .posts -}}
+{{- $lang := .lang -}}
+{{- $grouped := dict -}}
+{{- range $posts -}}
+  {{- $key := .TranslationKey -}}
+  {{- $existing := index $grouped $key -}}
+  {{- if not $existing -}}
+    {{- $grouped = merge $grouped (dict $key .) -}}
+  {{- else if and (ne $existing.Lang $lang) (eq .Lang $lang) -}}
+    {{- $grouped = merge $grouped (dict $key .) -}}
+  {{- end -}}
+{{- end -}}
+{{- $merged := slice -}}
+{{- range $key, $p := $grouped -}}
+  {{- $merged = $merged | append $p -}}
+{{- end -}}
+{{- return sort $merged "Date" "desc" -}}

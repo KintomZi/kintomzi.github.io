@@ -1,5 +1,6 @@
 ---
 title: "PointNet: Deep Learning on Point Sets for 3D Classification and Segmentation"
+_title: "PointNet: Deep Learning on Point Sets for 3D Classification and Segmentation"
 date: 2026-06-03T22:00:00+08:00
 categories: ["paper"]
 url: /zh/paper/2026/06/03/pointnet/

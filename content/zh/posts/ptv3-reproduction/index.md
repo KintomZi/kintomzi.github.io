@@ -1,5 +1,6 @@
 ---
 title: "PointTransformer V3 复现记录"
+_title: "PointTransformer V3 Reproduction Record"
 date: 2026-06-10T21:30:00+08:00
 categories: ["tech"]
 ---

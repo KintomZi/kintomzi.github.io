@@ -6,13 +6,15 @@
 
   {{ .Content }}
 
-  {{- if .Pages }}
+  {{- $allPosts := where (where .Site.AllPages "Section" .Section) "Kind" "page" }}
+  {{- $pages := partial "merge_posts.html" (dict "posts" $allPosts "lang" .Lang) }}
+  {{- if $pages }}
     <ul class="post-list">
-      {{- range .Pages }}
+      {{- range $pages }}
       <li>
         <span class="post-meta">{{ .Date.Format "Jan 2, 2006" }}</span>
         <h3>
-          <a class="post-link" href="{{ .Permalink }}">{{ .Title }}</a>
+          <a class="post-link" href="{{ .Permalink }}">{{ partial "post_title.html" (dict "page" . "lang" $.Lang) }}</a>
         </h3>
         {{- with .Params.categories }}
           {{- $notePrefix := cond (eq $.Lang "zh") "笔记/" "Notes/" }}

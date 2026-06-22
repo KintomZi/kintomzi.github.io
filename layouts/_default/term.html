@@ -1,16 +1,18 @@
 {{ define "main" }}
 <div class="home">
-  {{- $catDisplay := index .Site.Data.cat_names .Title .Lang | default .Title }}
+  {{- $catDisplay := index .Site.Data.cat_names .Data.Term .Lang | default .Data.Term }}
   <h1 class="page-heading">{{ $catDisplay }}</h1>
 
   {{ .Content }}
 
+  {{- $allPosts := where (where (where .Site.AllPages "Section" "posts") "Kind" "page") "Params.categories" "intersect" (slice .Data.Term) }}
+  {{- $pages := partial "merge_posts.html" (dict "posts" $allPosts "lang" .Lang) }}
   <ul class="post-list">
-    {{- range .Pages }}
+    {{- range $pages }}
     <li>
       <span class="post-meta">{{ .Date.Format "Jan 2, 2006" }}</span>
       <h3>
-        <a class="post-link" href="{{ .Permalink }}">{{ .Title }}</a>
+        <a class="post-link" href="{{ .Permalink }}">{{ partial "post_title.html" (dict "page" . "lang" $.Lang) }}</a>
       </h3>
     </li>
     {{- end }}
