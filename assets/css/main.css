@@ -38,8 +38,8 @@ body{display:flex;flex-direction:column;min-height:100vh;margin:0;padding:0;font
 
 .post-list{margin:0;padding:0;list-style:none}
 .post-list>li{margin-bottom:1.8rem}
-.post-list .post-meta{display:block;margin-bottom:0.3rem}
-.post-list h3{margin-bottom:0.3rem;margin-top:0;font-weight:600}
+.post-list .post-meta{display:block;margin-bottom:0.1rem}
+.post-list h3{margin-bottom:0.1rem;margin-top:0;font-weight:600}
 .post-list h3 a{color:#2a7ae2;text-decoration:none}
 .post-list h3 a:hover{text-decoration:underline;color:#1756a9}
 .post-list .post-categories{display:block;font-size:1rem}
