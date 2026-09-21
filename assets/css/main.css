@@ -45,6 +45,13 @@ body{display:flex;flex-direction:column;min-height:100vh;margin:0;padding:0;font
 .post-list .post-categories{display:block;font-size:1rem}
 .post-category{color:#777;text-decoration:none}
 
+/* 列表条目：标题下方一行显示日期与访问量（脚本填充数值前访问量保持隐藏） */
+.post-list .post-meta-row{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.post-list .post-meta-row .post-meta{margin-bottom:0}
+.post-views{font-size:.9rem;color:#999;white-space:nowrap;font-variant-numeric:tabular-nums}
+.post-views-icon{width:1.05em;height:1.05em;margin-right:.3rem;vertical-align:-0.12em}
+.post-views[hidden]{display:none}
+
 .post-list-heading{font-size:1.8rem;font-weight:600;margin-bottom:1rem;margin-top:3rem}
 
 a{color:#2a7ae2;text-decoration:none}

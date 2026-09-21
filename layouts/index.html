@@ -43,7 +43,7 @@
     <ul class="post-list">
       {{- range first 4 $posts }}
       <li>
-        <span class="post-meta">{{ .Date.Format "Jan 2, 2006" }}</span>
+        <span class="post-meta">{{ .Date.Format "2006-01-02" }}</span>
         <h3>
           <a class="post-link" href="{{ .Permalink }}">{{ partial "post_title.html" (dict "page" . "lang" $.Lang) }}</a>
         </h3>
@@ -67,6 +67,13 @@
     {{- if eq .Lang "zh" -}}出版物{{- else -}}Publications{{- end -}}
   </h2>
   <ul class="post-list">
+    <li>
+      <span class="post-meta">Remote Sensing Letters, 2026, 17(12), 1877-1889</span>
+      <h3>
+        <a class="post-link" href="https://doi.org/10.1080/2150704X.2026.2732245" target="_blank" rel="noopener">Road crack segmentation from remote sensing hyperspectral images based on image-level annotations</a>
+      </h3>
+      <span class="post-meta">Yue Zou, Yuhang He, <strong>Jindong Zhao</strong>, Yunfei Zhang, Yabo Luo, Shaobo Xia</span>
+    </li>
     <li>
       <span class="post-meta">Remote Sensing, 2026, 18(12), 1875</span>
       <h3>

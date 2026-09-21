@@ -1,0 +1,12 @@
+{{- /*
+  page_views.html — 渲染一篇文章的访问量（眼睛图标 + 数字），数值由 assets/js/pageviews.js 异步填充。
+  计数来自 Vercount 计数接口的只读路由（GET），在列表页读取不会增加任何文章的计数。
+  接口不可用时元素保持隐藏，不会显示空白或错误数值。
+  Usage: partial "page_views.html" (dict "page" . "lang" $.Lang)
+*/ -}}
+{{- $page := .page -}}
+{{- $lang := .lang -}}
+{{- $label := cond (eq $lang "zh") "访问量" "Page views" -}}
+<span class="post-views" data-post-views="{{ $page.Permalink }}" title="{{ $label }}" aria-label="{{ $label }}" hidden>
+  {{- partial "page_views_icon.html" . | chomp | safeHTML -}}<span class="post-views-value"></span>
+</span>

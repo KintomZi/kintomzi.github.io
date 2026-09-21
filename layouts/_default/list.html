@@ -12,10 +12,15 @@
     <ul class="post-list">
       {{- range $pages }}
       <li>
-        <span class="post-meta">{{ .Date.Format "Jan 2, 2006" }}</span>
         <h3>
           <a class="post-link" href="{{ .Permalink }}">{{ partial "post_title.html" (dict "page" . "lang" $.Lang) }}</a>
         </h3>
+        <div class="post-meta-row">
+          <span class="post-meta">{{ .Date.Format "2006-01-02" }}</span>
+          {{- if eq .Section "posts" }}
+            {{ partial "page_views.html" (dict "page" . "lang" $.Lang) }}
+          {{- end }}
+        </div>
         {{- with .Params.categories }}
           {{- $notePrefix := cond (eq $.Lang "zh") "笔记/" "Notes/" }}
           {{- $catsLen := len . }}

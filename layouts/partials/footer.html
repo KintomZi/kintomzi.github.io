@@ -25,13 +25,18 @@
       </p>
       <p class="site-description">
         {{- if eq .Lang "zh" }}
-        最后更新：{{ now.Format "2006-01" }}
+        最后更新：{{ now.Format "2006-01-02" }}
         {{- else }}
-        Last updated: {{ now.Format "2006-01" }}
+        Last updated: {{ now.Format "2006-01-02" }}
         {{- end }}
       </p>
     </div>
   </div>
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  {{- /* 计数脚本：Vercount（不蒜子替代方案）。它兼容下面的 busuanzi span 标签，并会自动同步不蒜子的历史数据。
+         如需换回不蒜子，只需把下面这行改回：
+         <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> */}}
+  <script defer src="https://events.vercount.one/js"></script>
+  {{- $pageViews := resources.Get "js/pageviews.js" | resources.Minify | resources.Fingerprint }}
+  <script defer src="{{ $pageViews.RelPermalink }}" integrity="{{ $pageViews.Data.Integrity }}"></script>
   <script>(function(){document.querySelectorAll('.post-content,.page-content').forEach(function(c){c.innerHTML=c.innerHTML.replace(/(<pre[^>]*>[\s\S]*?<\/pre>|<code[^>]*>[\s\S]*?<\/code>)|==(.+?)==/g,function(m,p1,p2){return p1||'<mark>'+p2+'</mark>'})})})()</script>
 </footer>

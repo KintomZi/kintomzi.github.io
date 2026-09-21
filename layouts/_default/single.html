@@ -4,7 +4,7 @@
     <h1 class="post-title p-name" itemprop="name headline">{{ .Title }}</h1>
     <p class="post-meta">
       <time class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05-07:00" }}" itemprop="datePublished">
-        {{ .Date.Format "Jan 2, 2006" }}
+        {{ .Date.Format "2006-01-02" }}
       </time>
       {{- with .Params.author }}
         • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ . }}</span></span>
@@ -18,13 +18,8 @@
           {{- if ne (add $i 1) $catsLen }}, {{ end }}
         {{- end }}
       {{- end }}
-      • <span id="busuanzi_container_page_pv" style="display:inline;">
-          {{- if eq .Lang "zh" }}
-          阅读量(PV) <span id="busuanzi_value_page_pv"></span>
-          {{- else }}
-          Page Views <span id="busuanzi_value_page_pv"></span>
-          {{- end }}
-        </span>
+      {{- $pvLabel := cond (eq .Lang "zh") "访问量" "Page views" }}
+      • <span class="post-views" id="busuanzi_container_page_pv" style="display:none" title="{{ $pvLabel }}" aria-label="{{ $pvLabel }}">{{- partial "page_views_icon.html" . | chomp | safeHTML -}}<span id="busuanzi_value_page_pv"></span></span>
     </p>
   </header>
 
