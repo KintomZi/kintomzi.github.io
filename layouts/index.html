@@ -6,7 +6,7 @@
     <div class="intro-card">
       <img class="intro-avatar" src="https://github.com/{{ .Site.Params.github_username }}.png" alt="avatar" />
       <div class="intro-body">
-        <p class="intro-name">{{ .Site.Params.github_username }}</p>
+        <p class="intro-name">{{ .Site.Params.author_name | default .Site.Params.github_username }}</p>
         {{- with .Site.Params.interests }}
         <div class="intro-interests">
           {{ range . }}
