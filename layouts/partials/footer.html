@@ -15,11 +15,11 @@
         {{- end }}
       </p>
       <p class="site-description">
-        <span id="busuanzi_container_site_uv" style="display:inline;">
+        <span id="vercount_container_site_uv" style="display:none;">
           {{- if eq .Lang "zh" }}
-          访客数 <span id="busuanzi_value_site_uv"></span>
+          访客数 <span id="vercount_value_site_uv"></span>
           {{- else }}
-          Visitors <span id="busuanzi_value_site_uv"></span>
+          Visitors <span id="vercount_value_site_uv"></span>
           {{- end }}
         </span>
       </p>
@@ -32,10 +32,12 @@
       </p>
     </div>
   </div>
-  {{- /* 计数脚本：Vercount（不蒜子替代方案）。它兼容下面的 busuanzi span 标签，并会自动同步不蒜子的历史数据。
-         如需换回不蒜子，只需把下面这行改回：
-         <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> */}}
+  {{- /* 前台统计与展示：Vercount。页面上的数字（本站访客数、文章访问量）都取它的数据。
+         注意：展示用的 span 一律使用 vercount_* 的 id，避免与下面不蒜子的 busuanzi_* id 互相覆盖。 */}}
   <script defer src="https://events.vercount.one/js"></script>
+  {{- /* 后台统计（不展示）：不蒜子脚本继续加载，只做计数，页面上不渲染它的任何数值。
+         需要核对不蒜子的数据时，用接口按 Referer 读取即可，或看浏览器 Network 里的 busuanzi 响应。 */}}
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   {{- $pageViews := resources.Get "js/pageviews.js" | resources.Minify | resources.Fingerprint }}
   <script defer src="{{ $pageViews.RelPermalink }}" integrity="{{ $pageViews.Data.Integrity }}"></script>
   <script>(function(){document.querySelectorAll('.post-content,.page-content').forEach(function(c){c.innerHTML=c.innerHTML.replace(/(<pre[^>]*>[\s\S]*?<\/pre>|<code[^>]*>[\s\S]*?<\/code>)|==(.+?)==/g,function(m,p1,p2){return p1||'<mark>'+p2+'</mark>'})})})()</script>
